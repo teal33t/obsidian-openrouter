@@ -3,7 +3,7 @@
   "name": "Openrouter Chat",
   "version": "1.0.0",
   "minAppVersion": "0.15.0",
-  "description": "Chat with AI models via Openrouter.ai API directly within Obsidian.",
+  "description": "Chat with LLM AI models via Openrouter.ai API, with history and context support",
   "author": "Saman Esmaeil",
   "authorUrl": "https://teal33t.github.io/",
   "fundingUrl": "https://teal33t.github.io/",
