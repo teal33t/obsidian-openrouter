@@ -1,94 +1,112 @@
-# Obsidian Sample Plugin
+# Obsidian OpenRouter Chat
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+![Plugin Banner](obsidian-openrouter.png)
 
-This project uses TypeScript to provide type checking and documentation.
-The repo depends on the latest plugin API (obsidian.d.ts) in TypeScript Definition format, which contains TSDoc comments describing what it does.
+**Bring the power of diverse AI models from OpenRouter directly into your Obsidian vault!**
 
-This sample plugin demonstrates some of the basic functionality the plugin API can do.
-- Adds a ribbon icon, which shows a Notice when clicked.
-- Adds a command "Open Sample Modal" which opens a Modal.
-- Adds a plugin setting tab to the settings page.
-- Registers a global click event and output 'click' to the console.
-- Registers a global interval which logs 'setInterval' to the console.
+[![Obsidian Compatibility](https://img.shields.io/badge/Obsidian-v1.0.0%2B-purple.svg)](https://obsidian.md) 
 
-## First time developing plugins?
+<!-- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) -->
 
-Quick starting guide for new plugin devs:
+---
 
-- Check if [someone already developed a plugin for what you want](https://obsidian.md/plugins)! There might be an existing plugin similar enough that you can partner up with.
-- Make a copy of this repo as a template with the "Use this template" button (login to GitHub if you don't see it).
-- Clone your repo to a local development folder. For convenience, you can place this folder in your `.obsidian/plugins/your-plugin-name` folder.
-- Install NodeJS, then run `npm i` in the command line under your repo folder.
-- Run `npm run dev` to compile your plugin from `main.ts` to `main.js`.
-- Make changes to `main.ts` (or create new `.ts` files). Those changes should be automatically compiled into `main.js`.
-- Reload Obsidian to load the new version of your plugin.
-- Enable plugin in settings window.
-- For updates to the Obsidian API run `npm update` in the command line under your repo folder.
+Seamlessly chat with various large language models (LLMs) via the OpenRouter API without leaving your notes. Enhance your workflow by bringing AI assistance right where you think and write.
 
-## Releasing new releases
+## 🚀 Features
 
-- Update your `manifest.json` with your new version number, such as `1.0.1`, and the minimum Obsidian version required for your latest release.
-- Update your `versions.json` file with `"new-plugin-version": "minimum-obsidian-version"` so older versions of Obsidian can download an older version of your plugin that's compatible.
-- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: https://github.com/obsidianmd/obsidian-sample-plugin/releases
-- Upload the files `manifest.json`, `main.js`, `styles.css` as binary attachments. Note: The manifest.json file must be in two places, first the root path of your repository and also in the release.
-- Publish the release.
+*   💬 **Direct Chat Interface:** Interact with AI models in a dedicated chat view within Obsidian.
+*   🔑 **OpenRouter Integration:** Connect securely using your OpenRouter API key.
+*   🤖 **Model Selection:** Choose from a wide range of models available through OpenRouter.
+*   🌡️ **Parameter Control:** Adjust Temperature and Max Tokens for tailored responses.
+*   📝 **System Prompt:** Define a custom system prompt to guide the AI's behavior.
+*   📚 **Flexible Context:**
+    *   Include the content of your currently open note.
+    *   Select specific files or entire folders from your vault to provide context.
+*   💾 **File-Based History:** Automatically save chat sessions as individual Markdown files in a designated folder within your vault.
+*   🎨 **Theme-Aware UI:** Designed to blend in with your Obsidian theme.
+*   ⚙️ **Easy Configuration:** Simple settings panel with a folder picker for history location.
 
-> You can simplify the version bump process by running `npm version patch`, `npm version minor` or `npm version major` after updating `minAppVersion` manually in `manifest.json`.
-> The command will bump version in `manifest.json` and `package.json`, and add the entry for the new version to `versions.json`
+## 📸 Screenshots
 
-## Adding your plugin to the community plugin list
+![Chat View](images/chat_view.png)
+![Chat View](images/chat_view3.png)
+![Settings Panel](images/settings.png)
+![Context Selection](images/context_selecting.png)
 
-- Check the [plugin guidelines](https://docs.obsidian.md/Plugins/Releasing/Plugin+guidelines).
-- Publish an initial version.
-- Make sure you have a `README.md` file in the root of your repo.
-- Make a pull request at https://github.com/obsidianmd/obsidian-releases to add your plugin.
+---
 
-## How to use
+## 🛠️ Installation
 
-- Clone this repo.
-- Make sure your NodeJS is at least v16 (`node --version`).
-- `npm i` or `yarn` to install dependencies.
-- `npm run dev` to start compilation in watch mode.
+### From Obsidian Community Plugins (Coming Soon!)
 
-## Manually installing the plugin
+Once the plugin is accepted into the community plugin store:
 
-- Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
+1.  Go to `Settings` -> `Community plugins`.
+2.  Ensure `Restricted mode` is **off**.
+3.  Click `Browse` community plugins and search for "OpenRouter Chat".
+4.  Click `Install`.
+5.  Once installed, toggle the plugin **on** under the `Installed plugins` list.
 
-## Improve code quality with eslint (optional)
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
-- To use eslint with this project, make sure to install eslint from terminal:
-  - `npm install -g eslint`
-- To use eslint to analyze this project use this command:
-  - `eslint main.ts`
-  - eslint will then create a report with suggestions for code improvement by file and line number.
-- If your source code is in a folder, such as `src`, you can use eslint with this command to analyze all files in that folder:
-  - `eslint .\src\`
+### Manual Installation (Current Method)
 
-## Funding URL
+1.  Download the latest `obsidian-openrouter.zip` file from the [Releases](https://github.com/teal33t/obsidian-openrouter/releases) page of this repository.
+2.  Navigate to your Obsidian vault's plugins folder: `YourVault/.obsidian/plugins/`.
+3.  Create a new folder named `obsidian-openrouter-chat`.
+4.  Unzip the downloaded `obsidian-openrouter-chat-plugin-final.zip` file and place its contents (`main.js`, `manifest.json`, `styles.css`) inside the `obsidian-openrouter-chat` folder.
+5.  In Obsidian, go to `Settings` -> `Community plugins`.
+6.  Ensure `Restricted mode` is **off**.
+7.  Click the `Reload plugins` button (circular arrows).
+8.  Find "OpenRouter Chat" in the list of installed plugins and toggle it **on**.
 
-You can include funding URLs where people who use your plugin can financially support it.
+---
 
-The simple way is to set the `fundingUrl` field to your link in your `manifest.json` file:
+## ⚙️ Configuration
 
-```json
-{
-    "fundingUrl": "https://buymeacoffee.com"
-}
-```
+After installing and enabling the plugin:
 
-If you have multiple URLs, you can also do:
+1.  Go to `Settings` -> `OpenRouter Chat` (usually near the bottom of the left sidebar).
+2.  **OpenRouter API Key:** Enter your API key obtained from [OpenRouter.ai](https://openrouter.ai/keys).
+3.  **Default Model:** Select your preferred default chat model from the dropdown (models are fetched automatically after entering a valid API key).
+4.  **Temperature:** Adjust the creativity/randomness of the AI's responses (0.0 - 2.0).
+5.  **Max Tokens:** Set a limit on the length of the AI's response (leave blank for the model's default).
+6.  **System Prompt:** Provide initial instructions to guide the AI's persona or task focus.
+7.  **Save Chats to Files:** Toggle this **on** to enable saving chat history.
+8.  **History Folder Path:** If saving is enabled, specify the folder within your vault where chat history files (`.md`) will be saved.
+---
 
-```json
-{
-    "fundingUrl": {
-        "Buy Me a Coffee": "https://buymeacoffee.com",
-        "GitHub Sponsor": "https://github.com/sponsors",
-        "Patreon": "https://www.patreon.com/"
-    }
-}
-```
+## 💡 Usage
 
-## API Documentation
+1.  **Open the Chat View:**
+    *   Click the message circle icon in the left ribbon.
+    *   Use the command palette (`Ctrl/Cmd + P`) and search for "Open OpenRouter Chat".
+2.  **Sending Messages:** Type your message in the input box at the bottom and press `Enter` (or click `Send`). Use `Shift + Enter` for newlines.
+3.  **Managing Context:**
+    *   Click the `Manage Context` button in the chat view header.
+    *   Use the modal to select files and/or folders from your vault to include as context.
+    *   Selected items appear as tags in the header. Click the `x` on a tag to remove it.
+    *   The content of selected items will be sent to the AI along with your message.
+4.  **Starting a New Chat / Saving History:**
+    *   Click the `+` button in the chat view header.
+    *   If `Save Chats to Files` is enabled in settings, the *current* chat session will be saved as a Markdown file in your specified history folder.
+    *   The chat view will then be cleared, ready for a new conversation.
 
-See https://github.com/obsidianmd/obsidian-api
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Please feel free to check the [issues page](https://github.com/teal33t/obsidian-openrouter/issues).
+
+
+## 📜 License
+
+This plugin is released under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgements
+
+*   Thanks to the [Obsidian Team](https://obsidian.md/) for creating such an extensible platform.
+*   Powered by the [OpenRouter API](https://openrouter.ai/).
+
+---
+
+Enjoy chatting with AI in Obsidian! ✨
+
