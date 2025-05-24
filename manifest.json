@@ -1,11 +1,11 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
-	"version": "1.0.0",
-	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
-	"isDesktopOnly": false
+  "id": "openrouter-chat",
+  "name": "OpenRouter Chat",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Chat with AI models via OpenRouter API directly within Obsidian.",
+  "author": "Saman Esmaeil",
+  "authorUrl": "https://teal33t.github.io/",
+  "fundingUrl": "https://teal33t.github.io/",
+  "isDesktopOnly": false
 }
