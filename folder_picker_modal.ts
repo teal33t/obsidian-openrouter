@@ -56,7 +56,7 @@ export class FolderPickerModal extends Modal {
         children.forEach(item => {
             if (item instanceof TFolder) {
                 const folderEl = container.createDiv({ cls: "folder-picker-item" });
-                folderEl.style.marginLeft = `${level * 20}px`; // Indentation
+                folderEl.style.setProperty("--indent-level", `${level}`); // Indentation via CSS var
                 folderEl.dataset.path = item.path; // Store path for selection
 
                 const iconEl = folderEl.createSpan({ cls: "folder-picker-icon" });

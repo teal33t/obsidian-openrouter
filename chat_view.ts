@@ -71,8 +71,10 @@ export class ChatView extends ItemView {
             }
         });
         this.inputEl.addEventListener('input', () => {
-            this.inputEl.style.height = 'auto';
-            this.inputEl.style.height = `${this.inputEl.scrollHeight}px`;
+            // Calculate scroll height first
+            const scrollHeight = this.inputEl.scrollHeight;
+            // Set CSS variable for height adjustment
+            this.inputEl.style.setProperty('--textarea-height', `${scrollHeight}px`);
         });
 
         // View always starts empty now, no history loading needed here
@@ -112,7 +114,7 @@ export class ChatView extends ItemView {
         this.updateContextDisplay();
         this.renderHistory();
         this.inputEl.value = ''; // Clear input field as well
-        this.inputEl.style.height = 'auto';
+        this.inputEl.style.removeProperty("--textarea-height"); // Reset height via CSS var
         this.inputEl.focus();
 
         if (this.plugin.settings.saveChatToFile) {
@@ -204,7 +206,7 @@ export class ChatView extends ItemView {
         this.history.push(userMessage);
         this.addMessageToDisplay(userMessage);
         this.inputEl.value = '';
-        this.inputEl.style.height = 'auto';
+        this.inputEl.style.removeProperty("--textarea-height"); // Reset height via CSS var
 
         const thinkingEl = this.chatContainer.createDiv({ cls: 'chat-message message-assistant thinking' });
         thinkingEl.createSpan({ text: 'AI is thinking...' });

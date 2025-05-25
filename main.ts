@@ -51,9 +51,9 @@ export default class OpenRouterChatPlugin extends Plugin {
 	}
 
 	onunload() {
-		console.log('Unloading OpenRouter Chat plugin');
-        this.app.workspace.detachLeavesOfType(VIEW_TYPE_CHAT);
-        const styleEl = document.getElementById('openrouter-chat-styles');
+		console.log("Unloading OpenRouter Chat plugin");
+        // Removed: this.app.workspace.detachLeavesOfType(VIEW_TYPE_CHAT); // Avoid detaching leaves in onunload as per Obsidian guidelines
+        const styleEl = document.getElementById("openrouter-chat-styles");
         if (styleEl) { styleEl.remove(); }
 	}
 
@@ -164,7 +164,7 @@ class OpenRouterChatSettingTab extends PluginSettingTab {
 
         new Setting(containerEl).setName('Temperature').setDesc('Controls randomness (0.0 to 2.0).').addText(text => text.setPlaceholder(DEFAULT_SETTINGS.temperature.toString()).setValue(this.plugin.settings.temperature.toString()).onChange(async (value) => { let numValue = parseFloat(value); numValue = isNaN(numValue) ? DEFAULT_SETTINGS.temperature : Math.max(0, Math.min(2, numValue)); this.plugin.settings.temperature = numValue; await this.plugin.saveSettings(); text.setValue(numValue.toString()); }));
         new Setting(containerEl).setName('Max Tokens').setDesc('Max tokens per completion (blank for default).').addText(text => text.setPlaceholder('Model default').setValue(this.plugin.settings.maxTokens?.toString() || '').onChange(async (value) => { const numValue = parseInt(value, 10); this.plugin.settings.maxTokens = (isNaN(numValue) || numValue <= 0) ? null : numValue; await this.plugin.saveSettings(); }));
-        new Setting(containerEl).setName('System Prompt').setDesc('Initial instruction for the AI model.').addTextArea(text => { text.setPlaceholder(DEFAULT_SETTINGS.systemPrompt).setValue(this.plugin.settings.systemPrompt).onChange(async (value) => { this.plugin.settings.systemPrompt = value; await this.plugin.saveSettings(); }); text.inputEl.rows = 4; text.inputEl.style.width = '100%'; });
+        new Setting(containerEl).setName('System Prompt').setDesc('Initial instruction for the AI model.').addTextArea(text => { text.setPlaceholder(DEFAULT_SETTINGS.systemPrompt).setValue(this.plugin.settings.systemPrompt).onChange(async (value) => { this.plugin.settings.systemPrompt = value; await this.plugin.saveSettings(); }); text.inputEl.rows = 4; text.inputEl.addClass('system-prompt-textarea'); });
 
         // --- File History Settings --- UPDATED
         containerEl.createEl('h3', { text: 'Chat History Saving' });

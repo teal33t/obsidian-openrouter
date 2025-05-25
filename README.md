@@ -19,9 +19,7 @@ Seamlessly chat with various large language models (LLMs) via the OpenRouter API
 *   🤖 **Model Selection:** Choose from a wide range of models available through OpenRouter.
 *   🌡️ **Parameter Control:** Adjust Temperature and Max Tokens for tailored responses.
 *   📝 **System Prompt:** Define a custom system prompt to guide the AI's behavior.
-*   📚 **Flexible Context:**
-    *   Include the content of your currently open note.
-    *   Select specific files or entire folders from your vault to provide context.
+*   📚 **Flexible Context:** Select specific files or entire folders from your vault to provide context.
 *   💾 **File-Based History:** Automatically save chat sessions as individual Markdown files in a designated folder within your vault.
 *   🎨 **Theme-Aware UI:** Designed to blend in with your Obsidian theme.
 *   ⚙️ **Easy Configuration:** Simple settings panel with a folder picker for history location.
@@ -51,8 +49,8 @@ Once the plugin is accepted into the community plugin store:
 
 1.  Download the latest `obsidian-openrouter.zip` file from the [Releases](https://github.com/teal33t/obsidian-openrouter/releases) page of this repository.
 2.  Navigate to your Obsidian vault's plugins folder: `YourVault/.obsidian/plugins/`.
-3.  Create a new folder named `obsidian-openrouter-chat`.
-4.  Unzip the downloaded `obsidian-openrouter-chat-plugin-final.zip` file and place its contents (`main.js`, `manifest.json`, `styles.css`) inside the `obsidian-openrouter-chat` folder.
+3.  Create a new folder named `obsidian-openrouter`.
+4.  Unzip the downloaded `obsidian-openrouter.zip` file and place its contents (`main.js`, `manifest.json`, `styles.css`) inside the `obsidian-openrouter` folder.
 5.  In Obsidian, go to `Settings` -> `Community plugins`.
 6.  Ensure `Restricted mode` is **off**.
 7.  Click the `Reload plugins` button (circular arrows).

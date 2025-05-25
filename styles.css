@@ -305,3 +305,39 @@
     /* width: calc(100% - 20px); */
 }
 
+
+
+
+/* Style for context modal items with indentation */
+.context-item {
+  /* Default margin-left, can be overridden by --indent-level */
+  margin-left: 0;
+  /* Calculate margin based on level, assuming 20px per level */
+  margin-left: calc(var(--indent-level, 0) * 20px);
+}
+
+
+
+/* Chat input textarea auto-resize */
+.chat-input-textarea {
+  resize: none;
+  overflow-y: hidden;
+  box-sizing: border-box;
+  min-height: 40px; /* Adjust as needed */
+  /* Use CSS variable for height, default to auto */
+  height: var(--textarea-height, auto);
+  /* Ensure width is handled correctly, e.g., width: 100%; */
+  width: 100%;
+  line-height: 1.5;
+  padding: 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+}
+
+
+
+/* Style for system prompt textarea in settings */
+.system-prompt-textarea {
+  width: 100%;
+  /* Add any other specific styles if needed */
+}

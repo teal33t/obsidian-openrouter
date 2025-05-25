@@ -50,7 +50,7 @@ export class ContextSelectionModal extends Modal {
 
         children.forEach(item => {
             const itemEl = container.createDiv({ cls: "context-item" });
-            itemEl.style.marginLeft = `${level * 20}px`; // Indentation
+            itemEl.style.setProperty('--indent-level', `${level}`); // Indentation via CSS var
 
             const checkbox = itemEl.createEl("input", { type: "checkbox" });
             checkbox.checked = this.selectedPaths.has(item.path);
